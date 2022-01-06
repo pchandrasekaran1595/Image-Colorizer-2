@@ -18,8 +18,8 @@ from sklearn.model_selection import KFold
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 TRANSFORM_BW = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.49853676753690856], [0.2798434312494038])])
-TRANSFORM_A = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5123545469789598], [0.3083807002502692])])
-TRANSFORM_B = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5123545469789598], [0.05202467833992707])])
+TRANSFORM_A = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5123545469789598], [0.0520517560541576])])
+TRANSFORM_B = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5123588190530597], [0.05202467833992707])])
 
 
 SAVE_PATH = "saves"
