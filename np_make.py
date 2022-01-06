@@ -18,7 +18,7 @@ def reserve_memory(path: str, size: int) -> tuple:
     return bw_images, ab_images
 
 
-def preprocess(image: np.ndarray, size: int) -> np.ndarray:
+def preprocess(image: np.ndarray, size: int) -> tuple:
     image = cv2.resize(src=image, dsize=(size, size), interpolation=cv2.INTER_AREA)
     image = cv2.cvtColor(src=image, code=cv2.COLOR_BGR2LAB)
     return image[:, :, 0].reshape(size, size, 1), image[:, :, 1:]
