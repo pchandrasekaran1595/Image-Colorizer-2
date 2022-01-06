@@ -1,4 +1,4 @@
-## Image Colorization (Test 1)
+## Image Colorization (Test 2)
 
 <br>
 
