@@ -19,7 +19,7 @@ def main():
     print(f"BW Images Std  : {bw_images.std() / 255}")
     breaker()
     print(f"A* Images Mean : {ab_images[:, :, 0].mean() / 255}")
-    print(f"A* Images Std  : {bw_images[:, :, 0].std() / 255}")
+    print(f"A* Images Std  : {ab_images[:, :, 0].std() / 255}")
     breaker()
     print(f"B* Images Mean : {ab_images[:, :, 1].mean() / 255}")
     print(f"B* Images Std  : {ab_images[:, :, 1].std() / 255}")
