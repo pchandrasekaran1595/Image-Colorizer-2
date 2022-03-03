@@ -61,9 +61,13 @@ def load_data(path: str, b_channel: bool) -> tuple:
     ab_images = np.load(os.path.join(path, "ab_images.npy"))
 
     if b_channel:
-        return bw_images, ab_images[:, :, :, 1]
+        # return bw_images, ab_images[:, :, :, 1]
+        return bw_images, ab_images
     else:
-        return bw_images, ab_images[:, :, :, 0]
+        # return bw_images, ab_images[:, :, :, 0]
+        return bw_images, ab_images
+
+        
 
 
 
