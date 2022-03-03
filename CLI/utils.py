@@ -214,7 +214,7 @@ def predict(model=None, mode: str = None, image_path: str = None, size: int = 32
     ab_image = ab_image.detach().cpu().numpy().transpose(1, 2, 0)
     ab_image = np.clip((ab_image * 255), 0, 255).astype("uint8")
 
-    color_image = np.concatenate((bw_image, ab_image, ab_image), axis=2)
+    color_image = np.concatenate((bw_image, ab_image), axis=2)
 
     return cv2.resize(src=color_image, dsize=(w, h), interpolation=cv2.INTER_AREA)
 

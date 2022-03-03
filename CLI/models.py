@@ -67,7 +67,7 @@ class Model(nn.Module):
         self.decoder.add_module("AN3", nn.ReLU())
         self.decoder.add_module("DC4", nn.ConvTranspose2d(in_channels=128, out_channels=64, kernel_size=2, stride=2))
         self.decoder.add_module("AN4", nn.ReLU())
-        self.decoder.add_module("DC5", nn.ConvTranspose2d(in_channels=64, out_channels=1, kernel_size=2, stride=2))
+        self.decoder.add_module("DC5", nn.ConvTranspose2d(in_channels=64, out_channels=2, kernel_size=2, stride=2))
         self.decoder.add_module("AN5", nn.Sigmoid())
                 
     def freeze(self):
@@ -103,14 +103,6 @@ class Model(nn.Module):
         encoded = self.encoder(x)
         decoded = self.decoder(encoded)
         return encoded, decoded
-
-
-def get_model(seed: int, mode: str, model_name: str):
-    torch.manual_seed(seed)
-    model = Model(mode, model_name).to(DEVICE)
-
-    return model
-
 
 
 def get_model(seed: int, mode: str, model_name: str):
